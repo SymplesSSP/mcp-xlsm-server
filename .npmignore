@@ -1,0 +1,49 @@
+# Test files
+test/
+test_*.sh
+test_*.txt
+*.test
+
+# Development files
+.git/
+.gitignore
+.claude/
+.vscode/
+.idea/
+
+# Build artifacts
+mcp-xlsm-server
+!bin/mcp-xlsm-server*
+
+# Logs
+*.log
+logs/
+
+# Test data
+*.xlsm
+*.xlsx
+*_data.json
+navigation_*.json
+
+# Development scripts
+debug-*.sh
+extract_*.sh
+mcp-wrapper.sh
+stable-wrapper.sh
+
+# Documentation extras
+*.txt
+mcp-excel-analysis-agent.md
+claude-code-integration.md
+
+# Config overrides
+config-*.yaml
+!config.yaml
+
+# CI/CD
+.github/
+.travis.yml
+.circleci/
+
+# macOS
+.DS_Store
