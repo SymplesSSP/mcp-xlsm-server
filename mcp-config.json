@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "mcp-xlsm": {
+      "command": "/Volumes/SSD/MCP/mcp-xlsm-server/mcp-xlsm-server",
+      "args": [
+        "--port", "3001",
+        "--config", "/Volumes/SSD/MCP/mcp-xlsm-server/config.yaml"
+      ],
+      "env": {},
+      "disabled": false
+    }
+  }
+}

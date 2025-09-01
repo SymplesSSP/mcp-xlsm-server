@@ -1,0 +1,14 @@
+# Test 1: Initialize
+{"jsonrpc":"2.0","method":"initialize","params":{"clientInfo":{"name":"test","version":"1.0.0"},"protocolVersion":"2024-11-05"},"id":1}
+
+# Test 2: List tools
+{"jsonrpc":"2.0","method":"list_tools","params":{},"id":2}
+
+# Test 3: Analyze file
+{"jsonrpc":"2.0","method":"analyze_file","params":{"path":"/Volumes/SSD/MCP/COMBINE INTERACTIF 02 2025.xlsm","include_patterns":true},"id":3}
+
+# Test 4: Build navigation
+{"jsonrpc":"2.0","method":"build_navigation_map","params":{"path":"/Volumes/SSD/MCP/COMBINE INTERACTIF 02 2025.xlsm","max_depth":2},"id":4}
+
+# Test 5: Query data
+{"jsonrpc":"2.0","method":"query_data","params":{"path":"/Volumes/SSD/MCP/COMBINE INTERACTIF 02 2025.xlsm","query":"FROUDIS","limit":5},"id":5}

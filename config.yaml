@@ -1,0 +1,64 @@
+server:
+  host: "0.0.0.0"
+  port: 3001
+  max_file_size: "500MB"
+  max_concurrent_requests: 10
+  request_timeout: 30s
+  shutdown_grace_period: 10s
+
+performance:
+  worker_pool_size: 8
+  buffer_size: "64KB"
+  stream_threshold: "10MB"
+
+limits:
+  analyze_file:
+    rate: "10/min"
+    timeout: 30s
+    max_memory: "2GB"
+    
+  build_navigation:
+    rate: "30/min"
+    timeout: 20s
+    max_memory: "1GB"
+    
+  query_data:
+    rate: "100/min"
+    timeout: 10s
+    max_memory: "500MB"
+
+cache:
+  max_memory: "100MB"
+  default_ttl: 5m
+  hot_data_ttl: 10m
+  eviction_policy: "lru"
+  cleanup_interval: 1m
+
+monitoring:
+  prometheus:
+    enabled: true
+    port: 9090
+    namespace: "mcp_xlsm"
+    
+  metrics:
+    - request_duration_seconds
+    - token_usage_total
+    - cache_hit_ratio
+    - memory_usage_bytes
+    - index_rebuild_total
+    
+  tracing:
+    enabled: true
+    sampling_rate: 0.1
+    exporter: "jaeger"
+    
+  logging:
+    level: "info"
+    format: "json"
+    output: "stdout"
+    error_file: "/var/log/mcp-xlsm/error.log"
+
+healthcheck:
+  endpoint: "/health"
+  interval: 10s
+  threshold: 3

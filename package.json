@@ -1,0 +1,92 @@
+{
+  "name": "@mcp/xlsm-server",
+  "version": "2.0.0",
+  "description": "MCP (Model Context Protocol) XLSM Server - Universal Excel/XLSM file analyzer for Claude Code with support for 200+ sheets and files up to 500MB",
+  "main": "index.js",
+  "bin": {
+    "mcp-xlsm": "./bin/mcp-xlsm.js"
+  },
+  "scripts": {
+    "postinstall": "node scripts/postinstall.js",
+    "build": "make build",
+    "dev": "make dev-watch",
+    "test": "make test",
+    "coverage": "make coverage",
+    "lint": "make lint",
+    "start": "make run-dev",
+    "start:stdio": "./mcp-xlsm-server --stdio --config config.yaml",
+    "install-mcp": "node scripts/install-mcp.js",
+    "uninstall-mcp": "claude mcp remove mcp-xlsm --scope user"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "excel",
+    "xlsm",
+    "xlsx",
+    "claude",
+    "claude-code",
+    "ai",
+    "llm",
+    "spreadsheet",
+    "data-analysis",
+    "excelize"
+  ],
+  "author": "Ghost",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yourusername/mcp-xlsm-server.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yourusername/mcp-xlsm-server/issues"
+  },
+  "homepage": "https://github.com/yourusername/mcp-xlsm-server#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "os": [
+    "darwin",
+    "linux",
+    "win32"
+  ],
+  "cpu": [
+    "x64",
+    "arm64"
+  ],
+  "files": [
+    "bin/",
+    "scripts/",
+    "config.yaml",
+    "Makefile",
+    "go.mod",
+    "go.sum",
+    "cmd/",
+    "internal/",
+    "pkg/",
+    "LICENSE",
+    "README.md",
+    "CLAUDE.md"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
+  "mcp": {
+    "name": "mcp-xlsm",
+    "description": "Excel/XLSM file analyzer with advanced querying capabilities",
+    "version": "2.0.0",
+    "tools": [
+      "analyze_file",
+      "build_navigation_map",
+      "query_data"
+    ],
+    "capabilities": {
+      "maxFileSize": "500MB",
+      "maxSheets": 200,
+      "streaming": true,
+      "compression": true,
+      "caching": true
+    }
+  }
+}
